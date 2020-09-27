@@ -30,7 +30,8 @@ function generatePassword(){
       if (useLowercase === true){
       passCombo = passCombo.concat(lowerCase);
     } 
-    // console.log (passCombo)
+    // console.log (passCombo);
+
       if (useUppercase === true){
       passCombo = passCombo.concat(upperCase);
     } 
@@ -41,6 +42,10 @@ function generatePassword(){
       passCombo = passCombo.concat(symbolCase);
     } 
 
+    if (passwordLength < 8 || passwordLength > 128) {
+      prompt ("Needs to be between 8 and 128 characters!"); passCode = "false";
+    }
+  
 
 
      for (var i = 0; i < passwordLength; i++){
@@ -51,13 +56,11 @@ function generatePassword(){
     
      //be careful with the type it receives --> string , you may want to use a number hint hint (parseInt(string))
         // choose a length of at least 8 - 128 characters
-        //  answer each prompt
 
     //  input should be validated and at least one character type should be selected
        //  prompts are answered
         // password is generated that matches the selected criteria
-        // password is generated
-        // password is either displayed in an alert or written to the page
+            
 
       return passCode;
 
