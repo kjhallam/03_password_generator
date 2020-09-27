@@ -1,22 +1,54 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
+console.log(generateBtn);
 
+var lowerCase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+
+var upperCase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+
+var numberCase = [0,1,2,3,4,5,6,7,8,9];
+
+var symbolCase =["!",  "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", ":", ";", "<", "=", ">", "?", "@", "[",  "]", "^", "`", "{", "|", "}", "~"];
+var passCombo = [];
+var passCode = "";
 
 function generatePassword(){
 
-  //- present series of prompts for password criteria
-
-    // select which criteria to include in the password
-      // prompted for character types to include in the password
-          //choose lowercase, uppercase, numeric, and/or special characters
     var useLowercase = confirm('Would you like to use lowercase letters?')
+    console.log(useLowercase);
     var useUppercase = confirm('Would you like to use uppercase letters?')
+    console.log(useUppercase);
     var useNumber = confirm('Would you like to use number?')
+    console.log(useNumber);
     var useSymbol = confirm('Would you like to use special character?')
-    
+    console.log(useSymbol);
     
      // prompt for the length of the password
      var passwordLength = prompt('How long would you like your password to be?')
+      // console.log(passwordLength);
+    
+      if (useLowercase === true){
+      passCombo = passCombo.concat(lowerCase);
+    } 
+    // console.log (passCombo)
+      if (useUppercase === true){
+      passCombo = passCombo.concat(upperCase);
+    } 
+      if (useNumber === true){
+      passCombo = passCombo.concat(numberCase);
+    } 
+      if (useSymbol === true){
+      passCombo = passCombo.concat(symbolCase);
+    } 
+
+
+
+     for (var i = 0; i < passwordLength; i++){
+       passCode = passCode + passCombo[Math.floor(Math.random() * passCombo.length)];
+     }
+     console.log(passCode);
+      
+    
      //be careful with the type it receives --> string , you may want to use a number hint hint (parseInt(string))
         // choose a length of at least 8 - 128 characters
         //  answer each prompt
@@ -27,7 +59,8 @@ function generatePassword(){
         // password is generated
         // password is either displayed in an alert or written to the page
 
-        
+      return passCode;
+
       }  
       
       // Write password to the #password input
