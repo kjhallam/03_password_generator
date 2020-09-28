@@ -109,11 +109,7 @@ function generatePassword() {
   var useSymbol = confirm("Would you like to use special character?");
   console.log(useSymbol);
 
-  if (passwordLength < 8 || passwordLength > 128) {
-    prompt("Needs to be between 8 and 128 characters!");
-    passCode = false;
-  }
-
+ 
   // prompt for the length of the password
   var passwordLength = prompt("How long would you like your password to be?");
   console.log(passwordLength);
@@ -138,17 +134,26 @@ function generatePassword() {
   }
   console.log(passCombo);
   
-  while (lowerCase === false && upperCase === false && numberCase === false && symbolCase === false) {
-    alert("You must have at least 1 character option selected!");
-    var useLowercase = confirm("Would you like to use lowercase letters?");
-    console.log(useLowercase);
-    var useUppercase = confirm("Would you like to use uppercase letters?");
-    console.log(useUppercase);
-    var useNumber = confirm("Would you like to use number?");
-    console.log(useNumber);
-    var useSymbol = confirm("Would you like to use special character?");
-    console.log(useSymbol);
+  if (useLowercase === false && useUppercase === false && useNumber === false && useSymbol === false) {
+   alert("You must have at least 1 character option selected!");
+   var useLowercase = confirm("Would you like to use lowercase letters?");
+   console.log(useLowercase);
+ 
+   var useUppercase = confirm("Would you like to use uppercase letters?");
+   console.log(useUppercase);
+ 
+   var useNumber = confirm("Would you like to use number?");
+   console.log(useNumber);
+ 
+   var useSymbol = confirm("Would you like to use special character?");
+   console.log(useSymbol); 
   }
+
+  if (passwordLength < 8 || passwordLength > 128) {
+    prompt("Needs to be between 8 and 128 characters!");
+    passCode === false;
+  }  
+  console.log (passwordLength < 8 || passwordLength > 128)
 
   for (var i = 0; i < passwordLength; i++) {
     passCode =
@@ -158,7 +163,7 @@ function generatePassword() {
 
   //  be careful with the type it receives --> string , you may want to use a number hint hint (parseInt(string))
 
-  return passCode;
+  return (passCode);
 }
 
 // Write password to the #password input
