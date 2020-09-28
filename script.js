@@ -15,13 +15,13 @@ var passCode = "";
 function generatePassword(){
 
     var useLowercase = confirm('Would you like to use lowercase letters?')
-    console.log(useLowercase);
+    // console.log(useLowercase);
     var useUppercase = confirm('Would you like to use uppercase letters?')
-    console.log(useUppercase);
+    // console.log(useUppercase);
     var useNumber = confirm('Would you like to use number?')
-    console.log(useNumber);
+    // console.log(useNumber);
     var useSymbol = confirm('Would you like to use special character?')
-    console.log(useSymbol);
+    // console.log(useSymbol);
     
      // prompt for the length of the password
      var passwordLength = prompt('How long would you like your password to be?')
@@ -43,26 +43,30 @@ function generatePassword(){
     } 
 
     if (passwordLength < 8 || passwordLength > 128) {
-      prompt ("Needs to be between 8 and 128 characters!"); passCode = "false";
+      prompt ("Needs to be between 8 and 128 characters!"); passCode =
+       false;
+    } 
+    if (lowerCase > 0 && upperCase > 0 && numberCase >  0 && symbolCase > 0) {
+        passCode === true; 
     }
+    else {
+        alert ("A Character needs to be confirmed to receive a password! ");
+       }   
   
+      
 
 
      for (var i = 0; i < passwordLength; i++){
        passCode = passCode + passCombo[Math.floor(Math.random() * passCombo.length)];
      }
-     console.log(passCode);
+  -   console.log(passCode);
       
     
-     //be careful with the type it receives --> string , you may want to use a number hint hint (parseInt(string))
+        //  be careful with the type it receives --> string , you may want to use a number hint hint (parseInt(string))
         // choose a length of at least 8 - 128 characters
+        //  input should be validated and at least one character type should be selected      
 
-    //  input should be validated and at least one character type should be selected
-       //  prompts are answered
-        // password is generated that matches the selected criteria
-            
-
-      return passCode;
+      return (passCode);
 
       }  
       
