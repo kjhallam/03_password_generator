@@ -46,12 +46,10 @@ function generatePassword(){
       prompt ("Needs to be between 8 and 128 characters!"); passCode =
        false;
     } 
-    if (lowerCase > 0 && upperCase > 0 && numberCase >  0 && symbolCase > 0) {
-        passCode === true; 
+    if (lowerCase < -1 && upperCase < -1 && numberCase < -1 && symbolCase < -1) {
+        passCode = false; 
     }
-    else {
-        alert ("A Character needs to be confirmed to receive a password! ");
-       }   
+    
   
       
 
@@ -59,7 +57,7 @@ function generatePassword(){
      for (var i = 0; i < passwordLength; i++){
        passCode = passCode + passCombo[Math.floor(Math.random() * passCombo.length)];
      }
-  -   console.log(passCode);
+       console.log(passCode);
       
     
         //  be careful with the type it receives --> string , you may want to use a number hint hint (parseInt(string))
