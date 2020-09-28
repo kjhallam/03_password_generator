@@ -63,8 +63,7 @@ function generatePassword(){
       
     
         //  be careful with the type it receives --> string , you may want to use a number hint hint (parseInt(string))
-        // choose a length of at least 8 - 128 characters
-        //  input should be validated and at least one character type should be selected      
+              
 
       return (passCode);
 
