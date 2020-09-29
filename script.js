@@ -103,10 +103,11 @@ function generatePassword() {
   console.log(passwordLength);
 
   if (passwordLength > 8 || passwordLength < 128) {
-    parseInt(prompt("Your number (" +passwordLength+") meets requirements for characters",""));
+    alert("Valid number entered!");
+    passwordLength === true;
   } else {(isNaN(passwordLength))
-    parseInt(prompt("This is not a number. Please enter an valid number between 8 and 128", ""));
-  }
+    parseInt(alert("This is not a number. Please enter an valid number between 8 and 128", ""));
+  } 
 
  
 // if (number < 100) {
