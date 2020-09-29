@@ -106,7 +106,7 @@ function generatePassword() {
     alert("Valid number entered!");
     passwordLength === true;
   } else {(isNaN(passwordLength))
-    parseInt(alert("This is not a number. Please enter an valid number between 8 and 128", ""));
+    parseInt(prompt("This is not a number. Please enter an valid number between 8 and 128", ""));
   } 
 
  
