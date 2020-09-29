@@ -99,24 +99,22 @@ var passCode = "";
 function generatePassword() {
   
   // prompt for the length of the password
-  var passwordLength = parseInt(prompt("How long would you like your password to be?"));
-  console.log(passwordLength);
+  var passwordLength = parseInt(window.prompt("How long would you like your password to be?"));
+    while(isNaN(passwordLength) || passwordLength > 128 || passwordLength < 8);
+    passwordLength === false;
+    if (passwordLength > 8 && passwordLength < 128){
+    alert("Is a valid number!");
+}
 
-  if (passwordLength > 8 || passwordLength < 128) {
-    alert("Valid number entered!");
-    passwordLength === true;
-  } else {(isNaN(passwordLength))
-    parseInt(prompt("This is not a number. Please enter an valid number between 8 and 128", ""));
-  } 
-
- 
-// if (number < 100) {
-//     document.write("Your number (" + number + ") is matches requirements", "");
-// } else if (isNaN(number)) {
-//     parseInt(prompt("It is not a number. Please enter a number from 1 to 100", ""));
-// } else {
-//     parseInt(prompt("Your number (" + number + ") is above 100. Please enter a number from 1 to 100", ""));
-// }
+  // if (passwordLength < 8 || passwordLength > 128) {
+  //   alert("Invalid number entered");
+  //   passwordLength === true;
+  // } else if (passwordLength > 8 && passwordLength < 128){
+  //   parseInt(prompt(" ("+ passwordLength +") is a valid number", ""));
+  // }
+  // else { (isNaN(passwordLength))
+  //   parseInt(prompt("This is not a number. Please enter an valid number between 8 and 128", ""));
+  // } 
 
   var useLowercase = confirm("Would you like to use lowercase letters?");
   console.log(useLowercase);
